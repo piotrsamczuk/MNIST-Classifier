@@ -21,6 +21,11 @@ This project implements a classifier for the MNIST dataset, which consists of 70
     python3 src/train.py
     ```
 
+    To train the model for a specific number of epochs, use the --epochs flag:
+    ```sh
+    python3 src/train.py --epochs <number_of_epochs>
+    ```
+
 3. **Evaluate the model:**
     ```sh
     python3 src/evaluate.py
