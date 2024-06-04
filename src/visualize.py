@@ -1,12 +1,20 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import os
+from tkinter import messagebox
 from tensorflow.keras.models import load_model
 from data_loader import load_data
 
 def visualize_predictions():
     (x_train, y_train), (x_test, y_test) = load_data()
-    model = load_model('models/mnist_model.h5')
-    
+
+    model_file = 'models/mnist_model.keras'
+    if not os.path.isfile(model_file):
+        messagebox.showerror("Error", "Model file not found. Please generate the model first.")
+        return
+    else:
+        model = load_model(model_file)
+
     predictions = model.predict(x_test)
 
     num_images = 10

@@ -1,6 +1,8 @@
 # src/draw_and_predict.py
 
 import tkinter as tk
+from tkinter import messagebox
+import os
 import numpy as np
 from PIL import Image, ImageOps, ImageDraw
 from tensorflow.keras.models import load_model
@@ -71,6 +73,10 @@ class App:
         plt.show()
 
 if __name__ == "__main__":
-    root = tk.Tk()
-    app = App(root)
-    root.mainloop()
+    model_file = 'models/mnist_model.keras'
+    if not os.path.isfile(model_file):
+        messagebox.showerror("Error", "Model file not found. Please generate the model first.")
+    else:
+        root = tk.Tk()
+        app = App(root)
+        root.mainloop()
