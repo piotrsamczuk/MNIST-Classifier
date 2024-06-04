@@ -15,7 +15,7 @@ class App:
         self.canvas = tk.Canvas(root, width=280, height=280, bg='white')
         self.canvas.pack()
         
-        self.model = load_model('models/mnist_model.h5')
+        self.model = load_model('models/mnist_model.keras')
         
         self.button_predict = tk.Button(root, text="Predict", command=self.predict_digit)
         self.button_predict.pack()
