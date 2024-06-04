@@ -11,6 +11,13 @@ This project implements a classifier for the MNIST dataset, which consists of 70
 - Drawing interface to predict handwritten digits
 
 ## Usage
+
+Optionally create a virtual environment:
+    ```sh
+    python3 -m venv venv
+    source venv/bin/activate # On Windows, use `venv\Scripts\activate`
+    ```
+
 1. Install the required packages:
     ```sh
     pip install -r requirements.txt

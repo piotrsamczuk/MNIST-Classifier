@@ -1,5 +1,3 @@
-# src/draw_and_predict.py
-
 import tkinter as tk
 from tkinter import messagebox
 import os
@@ -43,18 +41,14 @@ class App:
         img = self.image.resize((28, 28))
         img = ImageOps.invert(img)
 
-        # Find the bounding box of the non-zero pixels
         bbox = img.getbbox()
         if bbox:
             img = img.crop(bbox)
         
-        # Resize the cropped image to maintain aspect ratio
         img = img.resize((20, 20), Image.LANCZOS)
 
-        # Create a new 28x28 white image
         new_img = Image.new("L", (28, 28), 0)
         
-        # Calculate the position to paste the centered digit
         paste_pos = ((28 - img.size[0]) // 2, (28 - img.size[1]) // 2)
         new_img.paste(img, paste_pos)
         
