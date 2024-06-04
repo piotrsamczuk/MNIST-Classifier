@@ -2,7 +2,6 @@ import tensorflow as tf
 from tensorflow.keras import layers, models
 
 def create_model():
-    #This line creates a sequential model, which means the layers are stacked one after another.
     model = models.Sequential([
         layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
         layers.MaxPooling2D((2, 2)),

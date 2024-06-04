@@ -9,7 +9,6 @@ def train_model(epochs):
   
   model.fit(x_train, y_train, epochs=epochs, validation_data=(x_test, y_test))
   
-  # Save the model
   os.makedirs('models', exist_ok=True)
   model.save('models/mnist_model.keras')
 
